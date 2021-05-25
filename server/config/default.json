@@ -1,0 +1,5 @@
+{
+	"serverPort": 5000,
+	"uriDataBase": "mongodb+srv://Dmytro:Dmytro@cluster0.gx06r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+	"secretKey": "Smoke on the water A fire in the sky"
+}
