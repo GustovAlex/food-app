@@ -1,5 +1,5 @@
 import {
-	GET_DATA,
+	GET_CLIENT_DATA,
   } from "../types";
   
-  export const getData = (payload) => ({ type: GET_DATA, payload });
+  export const getData = (payload) => ({ type: GET_CLIENT_DATA, payload });

@@ -1,14 +1,15 @@
 import { takeLatest, put} from "redux-saga/effects";
-import { fetchGetData} from "../../helpers/httpServices";
+import { fetchGetClientData } from "../../helpers/httpServices";
 
 import {
-  GET_DATA
+  GET_CLIENT_DATA
 } from "../types";
 import { getData } from "../actions/index";
 
 const getClientData = function* () {
   try {
-    const { data } = yield (fetchGetData())
+    const { data } = yield (fetchGetClientData())
+    console.log("data", data)
     yield put(getData(data));
   } catch (e) {
     console.log({ e });
@@ -16,5 +17,5 @@ const getClientData = function* () {
 };
 
 export default [
-  takeLatest(GET_DATA, getClientData),
+  takeLatest(GET_CLIENT_DATA, getClientData),
 ];

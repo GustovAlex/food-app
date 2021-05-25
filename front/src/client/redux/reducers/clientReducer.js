@@ -1,5 +1,5 @@
 import {
-	GET_DATA,
+	GET_CLIENT_DATA,
   } from "../types";
   
   const defaultState = {
@@ -9,13 +9,13 @@ import {
   export default function clientReducer(state = defaultState, action) {
 	switch (action.type) {
 
-	  case GET_DATA:
-		console.log(action.payload)
-		const { clientData } = action.payload;
-		return {
-		  ...state,
-		  data: clientData,
-		};
+	//   case GET_CLIENT_DATA:
+		// console.log(action.payload)
+		// const { categoriesList } = action.payload;
+		// return {
+		//   ...state,
+		//   data: categoriesList,
+		// };
 	  default:
 		return state;
 	}

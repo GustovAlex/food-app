@@ -1,9 +1,10 @@
+import { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Switch, Route, Redirect  } from "react-router-dom";
 import styled from 'styled-components'
 import {clientRoutes} from './routes/index'
 import Navbar from './components/navBar/Navbar'
-// import { useDispatch } from 'react-redux'
-// import { getData } from './redux/actions/index'
+import { useDispatch } from 'react-redux'
+import { getData } from './redux/actions/index'
 
 const ClientPartBasicStyles = styled.div`
 padding: 0;
@@ -14,8 +15,16 @@ height: 100vh;
 `;
 
 export default function ClientPartView () {
-    // const dispatch = useDispatch()
-    // dispatch(getData())
+    const dispatch = useDispatch()
+
+
+    
+    useEffect(()=>{
+
+            dispatch(getData())
+
+    }, [])
+ 
 
 	return (
 		<ClientPartBasicStyles>
