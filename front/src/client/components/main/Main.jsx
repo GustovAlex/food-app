@@ -1,7 +1,4 @@
-import { useEffect, useState } from "react"
 import styled from "styled-components"
-import { useDispatch } from "react-redux"
-import { getData } from "../../redux/actions/index"
 
 const StyledCotainer = styled.div`
     padding: 0;
@@ -11,15 +8,9 @@ const StyledCotainer = styled.div`
 `
 
 export default function Main() {
-    // const dispatch = useDispatch()
-
-    // useEffect(() => {
-    //     dispatch(getData())
-    // })
-
     return (
         <div>
-            <StyledCotainer>MAIN PAGE CONMPONENT</StyledCotainer>
+            <div>MAIN PAGE CONMPONENT</div>
         </div>
     )
 }
