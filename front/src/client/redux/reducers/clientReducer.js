@@ -1,22 +1,18 @@
-import {
-	GET_CLIENT_DATA,
-  } from "../types";
-  
-  const defaultState = {
-	data: {}
-  };
-  
-  export default function clientReducer(state = defaultState, action) {
-	switch (action.type) {
+import { SET_CLIENT_DATA } from "../types"
 
-	//   case GET_CLIENT_DATA:
-		// console.log(action.payload)
-		// const { categoriesList } = action.payload;
-		// return {
-		//   ...state,
-		//   data: categoriesList,
-		// };
-	  default:
-		return state;
-	}
-  }
+const defaultState = {
+    categoriesList: {},
+}
+
+export default function clientReducer(state = defaultState, action) {
+    switch (action.type) {
+        case SET_CLIENT_DATA:
+            console.log(action.payload)
+            return {
+                ...state,
+                categoriesList: action.payload,
+            }
+        default:
+            return state
+    }
+}

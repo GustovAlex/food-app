@@ -1,5 +1,4 @@
-import {
-	GET_CLIENT_DATA,
-  } from "../types";
-  
-  export const getData = (payload) => ({ type: GET_CLIENT_DATA, payload });
+import { SET_CLIENT_DATA, GET_DATA } from "../types"
+
+export const setData = (payload) => ({ type: SET_CLIENT_DATA, payload })
+export const getCategories = () => ({ type: GET_DATA })
