@@ -1,0 +1,22 @@
+.categoryItem {
+    width: 30vw;
+    text-align: center;
+    margin: 40px 0;
+
+    text-decoration: none;
+
+    &-wrap {
+        &-img {
+            height: 100px;
+            width: 100px;
+            cursor: pointer;
+        }
+
+        &-title {
+            cursor: pointer;
+            padding-top: 20px;
+            text-transform: uppercase;
+            font-size: 24px;
+        }
+    }
+}

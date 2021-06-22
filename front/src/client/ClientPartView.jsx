@@ -17,7 +17,7 @@ const ClientPartBasicStyles = styled.div`
     margin: 0;
     background: #fff;
     width: 100%;
-    height: 100vh;
+    height: 100%;
 `
 
 export default function ClientPartView() {
