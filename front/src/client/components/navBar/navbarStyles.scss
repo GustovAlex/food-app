@@ -1,0 +1,68 @@
+.navbar {
+    background: repeat-x center top url("../../img/navBarBG.png");
+    width: 100vw;
+    padding: 0 10px;
+    box-sizing: border-box;
+
+    &-content {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        color: #fff;
+
+        &-logo {
+            padding-top: 0;
+        }
+
+        &-links {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 40px;
+            text-decoration: none;
+            .navLink {
+                text-decoration: none;
+                margin-left: 20px;
+                text-transform: uppercase;
+                color: #fff;
+                transition: color 0.4s ease;
+
+                &:hover {
+                    color: #ff8302;
+                    cursor: pointer;
+                }
+                &.active {
+                    color: #ff8302;
+                }
+            }
+        }
+
+        &-cartButton {
+            position: relative;
+            text-decoration: none;
+            &:hover {
+                cursor: pointer;
+            }
+
+            &-icon {
+                padding-top: 20px;
+                height: 60px;
+                width: 60px;
+            }
+
+            &-count {
+                display: flex;
+                height: 25px;
+                width: 25px;
+                background-color: #ff8302;
+                color: #fff;
+                border-radius: 50%;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 35px;
+                left: 22px;
+            }
+        }
+    }
+}

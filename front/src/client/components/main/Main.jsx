@@ -1,16 +1,21 @@
-import styled from "styled-components"
+import { useEffect } from "react"
+import { useSelector } from "react-redux"
+import "./mainStyles.scss"
+import CategoryItem from "./categoryItem/CategoryItem"
 
-const StyledCotainer = styled.div`
-    padding: 0;
-    margin: 0 auto;
-    color: ${(props) => props.inputColor || "#184653"};
-    max-width: 1200px;
-`
+export default function Main({ categoriesList }) {
+    // const { categoriesList } = useSelector((state) => state.data)
 
-export default function Main() {
+    // const { categoriesList } = useSelector((state) => state.data)
+    // console.log("in main component", categoriesList)
     return (
-        <div>
-            <div>MAIN PAGE CONMPONENT</div>
+        <div className='main'>
+            <div>
+                {categoriesList.map((category) => (
+                    <CategoryItem category={category} />
+                ))}
+            </div>
+            MAIN PAGE CONMPONENT
         </div>
     )
 }

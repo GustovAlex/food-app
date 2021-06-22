@@ -32,7 +32,7 @@ export default function AdminPartView({ isLogin, isLoading }) {
                                         />
                                     )
                                 })}
-                                {/* <Redirect to='/admin/categories' /> */}
+                                <Redirect to='/admin/categories' />
                             </Switch>
                         </Router>
                     ) : (

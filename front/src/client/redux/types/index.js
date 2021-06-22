@@ -1,3 +1,3 @@
 export const SET_CLIENT_DATA = "SET_CLIENT_DATA"
 export const GET_DATA = "GET_DATA"
-export const TOGLE_IS_LOADING = "TOGLE_IS_LOADING"
+export const TOGLE_LOADING = "TOGLE_LOADING"

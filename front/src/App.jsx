@@ -12,7 +12,8 @@ function App() {
         <Router>
             <Switch>
                 <Route path='/client' component={ClientPart} />
-                <Route path='/admin' exact component={AdminPart} />
+                <Route path='/admin' component={AdminPart} />
+                <Redirect to='/client' />
             </Switch>
         </Router>
     )

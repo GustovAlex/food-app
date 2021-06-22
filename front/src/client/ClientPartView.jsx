@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import {
     BrowserRouter as Router,
     Switch,
@@ -9,7 +9,7 @@ import styled from "styled-components"
 import { clientRoutes } from "./routes/index"
 import Navbar from "./components/navBar/Navbar"
 import { useDispatch, useSelector } from "react-redux"
-import { getCategories, togleIsLoading } from "./redux/actions/index"
+import { getCategories } from "./redux/actions/index"
 import PropagateLoader from "react-spinners/PropagateLoader"
 
 const ClientPartBasicStyles = styled.div`
@@ -22,15 +22,15 @@ const ClientPartBasicStyles = styled.div`
 
 export default function ClientPartView() {
     const dispatch = useDispatch()
-    const { isLoading } = useSelector((state) => state.data)
-    console.log("isLoading", isLoading)
+
+    const { loading } = useSelector((state) => state.data)
     useEffect(() => {
         dispatch(getCategories())
     }, [])
 
     return (
         <>
-            {!isLoading ? (
+            {!loading ? (
                 <ClientPartBasicStyles>
                     <Router>
                         <Navbar />
@@ -44,7 +44,7 @@ export default function ClientPartView() {
                                     />
                                 )
                             })}
-                            {/* <Redirect to='/client/main' /> */}
+                            <Redirect to='/client/main' />
                         </Switch>
                     </Router>
                 </ClientPartBasicStyles>

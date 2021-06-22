@@ -1,8 +1,8 @@
-import { SET_CLIENT_DATA, TOGLE_IS_LOADING } from "../types"
+import { SET_CLIENT_DATA, TOGLE_LOADING } from "../types"
 
 const defaultState = {
     categoriesList: {},
-    isLoading: false,
+    loading: false,
 }
 
 export default function clientReducer(state = defaultState, action) {
@@ -13,10 +13,10 @@ export default function clientReducer(state = defaultState, action) {
                 ...state,
                 categoriesList: action.payload,
             }
-        case TOGLE_IS_LOADING:
+        case TOGLE_LOADING:
             return {
                 ...state,
-                isLoading: !state.isLoading,
+                loading: !state.loading,
             }
         default:
             return state
