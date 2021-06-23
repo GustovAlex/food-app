@@ -3,6 +3,13 @@ import { useSelector } from "react-redux"
 import "./mainStyles.scss"
 import CategoryItem from "./categoryItem/CategoryItem"
 import { NavLink } from "react-router-dom"
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Redirect,
+} from "react-router-dom"
+import ProductList from "../product/ProductList"
 
 export default function Main({ categoriesList }) {
     // const { categoriesList } = useSelector((state) => state.data)
@@ -14,8 +21,8 @@ export default function Main({ categoriesList }) {
             <div className='main-item'>
                 {categoriesList.map((category) => (
                     <NavLink
+                        to={`/client/product/${category._id}`}
                         className='main-item-link'
-                        to={category.name}
                         key={category._id}>
                         <CategoryItem category={category} />
                     </NavLink>

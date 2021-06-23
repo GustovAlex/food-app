@@ -12,6 +12,13 @@
         &-link {
             text-decoration: none;
             color: #184653;
+            box-sizing: border-box;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                color: #ff8302;
+                transform: scale(1.03);
+            }
         }
     }
 }

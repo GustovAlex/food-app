@@ -13,15 +13,15 @@ export default function Navbar({ ordersCount }) {
                 <img className='navbar-content-logo' src={logo} alt='logo' />
                 <div className='navbar-content-links'>
                     {clientRoutes.map((el) => {
-                        return (
+                        return el.text ? (
                             <NavLink
                                 to={el.path}
-                                key={el.text}
+                                key={el.path}
                                 className='navLink'
                                 activeClassName='active'>
                                 {el.text}
                             </NavLink>
-                        )
+                        ) : null
                     })}
                 </div>
                 <NavLink
