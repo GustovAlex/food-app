@@ -38,8 +38,6 @@ export default function Products({
                     </p>
                 )}
             </div>
-
-            {selectedCategory?.name}
         </div>
     )
 }

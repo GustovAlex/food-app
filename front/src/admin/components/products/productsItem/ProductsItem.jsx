@@ -11,11 +11,17 @@ export default function ProductsItem({
     handleOpenClose,
     targetProductName,
     productName,
+    productIngredients,
+    productPrice,
     fileName,
     onChangeProductName,
+    onChangeProductIngredients,
+    onChangeProductPrice,
     src,
     onChangeFile,
     successMessage,
+    onClickDeleteProduct,
+    onClickUpdateProduct,
 }) {
     const classes = useStyles()
     return (
@@ -60,7 +66,7 @@ export default function ProductsItem({
             <ConfirmModal
                 openConfirmModal={openConfirmModal}
                 handleOpenCloseConfirmModal={handleOpenCloseConfirmModal}
-                // onClickDeleteCategory={onClickDeleteCategory}
+                onClick={onClickDeleteProduct}
                 titleName={`${targetProductName} product`}
             />
             <Modal
@@ -68,9 +74,13 @@ export default function ProductsItem({
                 handleOpenClose={handleOpenClose}
                 title='update product'
                 productName={productName}
+                productIngredients={productIngredients}
+                productPrice={productPrice}
                 fileName={fileName}
-                onchangeInput={onChangeProductName}
-                // onClick={onClickUpdateCategory}
+                onChangeProductName={onChangeProductName}
+                onChangeProductIngredients={onChangeProductIngredients}
+                onChangeProductPrice={onChangeProductPrice}
+                onClick={onClickUpdateProduct}
                 onChangeFile={onChangeFile}
                 // onSubmitImg={onSubmitImg}
                 src={src}

@@ -16,7 +16,6 @@ export const fetchGetData = async () => {
 }
 
 export const fetchAddCategory = async (categoryName, fileName) => {
-    console.log("payload in HTTP", categoryName, fileName)
     const response = await axios.post(
         "http://localhost:5000/api/category",
         {
@@ -79,7 +78,6 @@ export const fetchUpdateCetegory = async (
     categoryName,
     fileName
 ) => {
-    console.log("SAGA", categoryId, categoryName, fileName)
     const response = await axios.put(
         `http://localhost:5000/api/category/${categoryId}`,
         {
@@ -134,5 +132,39 @@ export const fetchAddProduct = async (
         }
     )
     console.log("response", response)
+    return response
+}
+
+export const fetchDeleteProduct = async (productId) => {
+    const response = await axios.delete(
+        `http://localhost:5000/api/product/${productId}`,
+        {
+            headers: { Authorization: localStorage.getItem("Authorization") },
+        }
+    )
+    return response
+}
+
+export const fetchUpdateProduct = async (
+    productId,
+    productName,
+    productIngredients,
+    productPrice,
+    fileName,
+    categoryId
+) => {
+    const response = await axios.put(
+        `http://localhost:5000/api/product/${productId}`,
+        {
+            name: productName,
+            ingredients: productIngredients,
+            price: productPrice,
+            img: fileName,
+            categoryId,
+        },
+        {
+            headers: { Authorization: localStorage.getItem("Authorization") },
+        }
+    )
     return response
 }

@@ -22,6 +22,8 @@ export default function TransitionsModal({
     successMessage,
     categoryName,
     productName,
+    productIngredients,
+    productPrice,
     lable,
 }) {
     const classes = useStyles()
@@ -66,16 +68,16 @@ export default function TransitionsModal({
                                             onChange={
                                                 onChangeProductIngredients
                                             }
-                                            value={productName}
-                                            defaultValue={productName}
+                                            value={productIngredients}
+                                            defaultValue={productIngredients}
                                         />
                                     </div>
                                     <div className={classes.modalInput}>
                                         <Input
                                             lable={`${lable} price`}
                                             onChange={onChangeProductPrice}
-                                            value={productName}
-                                            defaultValue={productName}
+                                            value={productPrice}
+                                            defaultValue={productPrice}
                                         />
                                     </div>
                                 </div>

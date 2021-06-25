@@ -1,18 +1,35 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import ProductsItem from "./ProductsItem"
+import { deleteProduct, updateProduct } from "../../../redux/actions/product"
+import {
+    deleteCategoryImg,
+    addCategoryImg,
+} from "../../../redux/actions/category"
 
 export default function ProductsItemContainer({ product }) {
     console.log("product", product)
     const dispatch = useDispatch()
     const productId = product._id
+    const categoryId = product.categoryId
     const targetProductName = product.name
     const imgName = product.img
     const [open, setOpen] = useState(false)
     const [openConfirmModal, setOpenConfirmModal] = useState(false)
     const [productName, setProductName] = useState(
-        !!targetProductName ? targetProductName : ""
+        !!product.name ? product.name : ""
     )
+    const [productIngredients, setProductIngredients] = useState(
+        !!product.ingredients ? product.ingredients : ""
+    )
+    const [productPrice, setProductPrice] = useState(
+        !!product.price ? product.price : ""
+    )
+
+    console.log("productName", productName)
+    console.log("productIngredients", productIngredients)
+    console.log("productPrice", productPrice)
+
     const [file, setFile] = useState("")
     const [fileName, setFileName] = useState(!!imgName ? imgName : "")
     const [src, setSrc] = useState("")
@@ -27,30 +44,46 @@ export default function ProductsItemContainer({ product }) {
         setSrc(URL.createObjectURL(e.target.files[0]))
     }
 
-    // const onSubmitImg = (e) => {
-    //     const formData = new FormData()
-    //     formData.append("file", file)
-    //     formData.append("fileName", fileName)
-    //     e.preventDefault()
-    //     dispatch(addCategoryImg({ formData }))
-    //     setFileName(fileName)
-    //     setSuccessMessage("image was added")
-    // }
+    const onSubmitImg = (e) => {
+        const formData = new FormData()
+        formData.append("file", file)
+        formData.append("fileName", fileName)
+        e.preventDefault()
+        dispatch(addCategoryImg({ formData }))
+        setFileName(fileName)
+        setSuccessMessage("image was added")
+    }
 
     const handleOpenClose = () => setOpen(!open)
 
-    // const onClickUpdateCategory = () => {
-    //     dispatch(updateCategory({ categoryId, categoryName, fileName }))
-    //     handleOpenClose()
-    // }
+    const onClickUpdateProduct = () => {
+        dispatch(
+            updateProduct({
+                productId,
+                productName,
+                productIngredients,
+                productPrice,
+                fileName,
+                categoryId,
+            })
+        )
+        handleOpenClose()
+    }
 
     const onChangeProductName = (e) => setProductName(e.target.value)
+    const onChangeProductIngredients = (e) =>
+        setProductIngredients(e.target.value)
+    const onChangeProductPrice = (e) => setProductPrice(e.target.value)
 
     const handleOpenCloseConfirmModal = () => {
         setOpenConfirmModal(!openConfirmModal)
     }
 
-    // const onClickDeleteCategory = () => dispatch(deleteProduct(productId))
+    const onClickDeleteProduct = () => {
+        dispatch(deleteProduct(productId))
+        dispatch(deleteCategoryImg(fileName))
+    }
+
     return (
         <ProductsItem
             product={product}
@@ -58,12 +91,16 @@ export default function ProductsItemContainer({ product }) {
             openConfirmModal={openConfirmModal}
             handleOpenCloseConfirmModal={handleOpenCloseConfirmModal}
             handleOpenClose={handleOpenClose}
-            // onClickDeleteCategory={onClickDeleteCategory}
+            onClickDeleteProduct={onClickDeleteProduct}
             targetProductName={targetProductName}
             productName={productName}
+            productIngredients={productIngredients}
+            productPrice={productPrice}
             fileName={fileName}
             onChangeProductName={onChangeProductName}
-            // onClickUpdateCategory={onClickUpdateCategory}
+            onChangeProductIngredients={onChangeProductIngredients}
+            onChangeProductPrice={onChangeProductPrice}
+            onClickUpdateProduct={onClickUpdateProduct}
             src={src}
             onChangeFile={onChangeFile}
             // onSubmitImg={onSubmitImg}

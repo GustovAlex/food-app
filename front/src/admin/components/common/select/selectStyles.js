@@ -10,6 +10,9 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: "15px",
         minWidth: 150,
     },
+    MuiInputBaseInput: {
+        padding: "20px",
+    },
 }))
 
 export default useStyles

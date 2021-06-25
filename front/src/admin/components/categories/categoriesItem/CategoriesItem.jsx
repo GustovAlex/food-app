@@ -56,7 +56,7 @@ export default function CategoriesItem({
             <ConfirmModal
                 openConfirmModal={openConfirmModal}
                 handleOpenCloseConfirmModal={handleOpenCloseConfirmModal}
-                onClickDeleteCategory={onClickDeleteCategory}
+                onClick={onClickDeleteCategory}
                 titleName={`${targetCategoryName} category`}
             />
             <Modal

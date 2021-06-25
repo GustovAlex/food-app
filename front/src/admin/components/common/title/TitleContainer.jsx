@@ -1,7 +1,10 @@
 import { useState } from "react"
 import Title from "./Title"
 import { addCategory, addCategoryImg } from "../../../redux/actions/category"
-import { addProduct } from "../../../redux/actions/product"
+import {
+    addProduct,
+    setSelectedCategoryId,
+} from "../../../redux/actions/product"
 import { useDispatch } from "react-redux"
 
 export default function TitleContainer({
@@ -18,12 +21,6 @@ export default function TitleContainer({
     const [productName, setProductName] = useState("")
     const [productIngredients, setProductIngredients] = useState("")
     const [productPrice, setProductPrice] = useState("")
-
-    console.log("productName", categoryName)
-    console.log("productName", productName)
-    console.log("productIngredients", productIngredients)
-    console.log("productPrice", productPrice)
-
     const [file, setFile] = useState("")
     const [fileName, setFileName] = useState("")
     const [src, setSrc] = useState("")
@@ -48,19 +45,17 @@ export default function TitleContainer({
     const handleOpenClose = () => setOpen(!open)
 
     const onClickAddCategory = () => {
-        // !!categoryName
-        // ? dispatch(addCategory({ categoryName, fileName }))
-        // :
-        dispatch(
-            addProduct({
-                productName,
-                productIngredients,
-                productPrice,
-                fileName,
-                selectedCategoryId,
-            })
-        )
-
+        !!categoryName
+            ? dispatch(addCategory({ categoryName, fileName }))
+            : dispatch(
+                  addProduct({
+                      productName,
+                      productIngredients,
+                      productPrice,
+                      fileName,
+                      selectedCategoryId,
+                  })
+              )
         handleOpenClose()
     }
 

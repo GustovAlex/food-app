@@ -57,11 +57,6 @@ export default function CategoriesItemContainer({ category }) {
 
     const onClickDeleteCategory = (e) => {
         dispatch(deleteCategory(categoryId))
-        // const formData = new FormData()
-        // formData.append("file", file)
-        // formData.append("fileName", fileName)
-        // e.preventDefault()
-        console.log("fileName", fileName)
         dispatch(deleteCategoryImg(fileName))
     }
 
