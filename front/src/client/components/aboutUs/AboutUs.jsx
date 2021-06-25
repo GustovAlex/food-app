@@ -1,9 +1,3 @@
-
-export default function AboutUs () {
-
-	return (
-		<div>
-			AboutUs component
-		</div>
-	)
+export default function AboutUs() {
+    return <div>AboutUs component</div>
 }

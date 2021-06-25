@@ -1,8 +1,6 @@
 import "./categoryItemStyles.scss"
-import { NavLink } from "react-router-dom"
 
 export default function CategoryItem({ category }) {
-    console.log("category product", category.product)
     return (
         <div className='categoryItem'>
             <div className='categoryItem-wrap'>

@@ -7,6 +7,5 @@ export default function ProductPage(props) {
     const category = categoriesList.find(
         (category) => `${category._id}` === categoryId
     )
-
     return <ProductListContainer category={category} />
 }

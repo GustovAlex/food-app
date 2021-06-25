@@ -1,7 +1,5 @@
-import styled from "styled-components"
 import { NavLink } from "react-router-dom"
 import { clientRoutes } from "../../routes/index"
-import navBarBg from "../../img/navBarBG.png"
 import logo from "../../img/logo.svg"
 import cartIcon from "../../img/basket.png"
 import "./navbarStyles.scss"

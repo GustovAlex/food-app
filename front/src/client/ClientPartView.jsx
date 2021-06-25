@@ -20,13 +20,12 @@ const ClientPartBasicStyles = styled.div`
     height: 100%;
 `
 
-export default function ClientPartView() {
+export default function ClientPartView(props) {
     const dispatch = useDispatch()
-
-    const { loading } = useSelector((state) => state.data)
     useEffect(() => {
         dispatch(getCategories())
     }, [])
+    const { loading } = useSelector((state) => state.data)
 
     return (
         <>

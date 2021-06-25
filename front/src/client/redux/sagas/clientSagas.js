@@ -1,6 +1,6 @@
 import { takeLatest, put, call } from "redux-saga/effects"
 import { fetchGetClientData } from "../../helpers/httpServices"
-import { SET_CLIENT_DATA, GET_DATA, TOGLE_LOADING } from "../types"
+import { GET_DATA, TOGLE_LOADING } from "../types"
 import { setData } from "../actions/index"
 
 const getClientData = function* () {

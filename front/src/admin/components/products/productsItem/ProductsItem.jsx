@@ -1,10 +1,22 @@
-import { Divider } from "@material-ui/core"
 import useStyles from "./productsItemStyles"
 import Modal from "../../common/modal/Modal"
 import ConfirmModal from "../../common/confirmModal/ConfirmModal"
 import Button from "../../common/button/Button"
 
-export default function ProductsItem({ product }) {
+export default function ProductsItem({
+    product,
+    open,
+    openConfirmModal,
+    handleOpenCloseConfirmModal,
+    handleOpenClose,
+    targetProductName,
+    productName,
+    fileName,
+    onChangeProductName,
+    src,
+    onChangeFile,
+    successMessage,
+}) {
     const classes = useStyles()
     return (
         <div>
@@ -13,7 +25,7 @@ export default function ProductsItem({ product }) {
                     <img
                         className={classes.productItemImg}
                         src={`/productImg/${product.img}`}
-                        alt='burger'
+                        alt={product.name}
                     />
                 ) : (
                     <p className={classes.productNoPhoto}>no photo</p>
@@ -35,37 +47,34 @@ export default function ProductsItem({ product }) {
 
                 <div className={classes.productItemButtons}>
                     <div className={classes.productItemButtonsItem}>
-                        <Button
-                            text='update'
-                            // onClick={handleOpenClose}
-                        />
+                        <Button text='update' onClick={handleOpenClose} />
                     </div>
                     <div className={classes.productItemButtonsItem}>
                         <Button
                             text='delete'
-                            // onClick={handleOpenCloseConfirmModal}
+                            onClick={handleOpenCloseConfirmModal}
                         />
                     </div>
                 </div>
             </div>
             <ConfirmModal
-            // openConfirmModal={openConfirmModal}
-            // handleOpenCloseConfirmModal={handleOpenCloseConfirmModal}
-            // onClickDeleteCategory={onClickDeleteCategory}
-            // titleName={`${targetCategoryName} category`}
+                openConfirmModal={openConfirmModal}
+                handleOpenCloseConfirmModal={handleOpenCloseConfirmModal}
+                // onClickDeleteCategory={onClickDeleteCategory}
+                titleName={`${targetProductName} product`}
             />
             <Modal
-            // open={open}
-            // handleOpenClose={handleOpenClose}
-            // title='update category'
-            // categoryName={categoryName}
-            // fileName={fileName}
-            // onchangeInput={onChangeCategoryName}
-            // onClick={onClickUpdateCategory}
-            // onChangeFile={onChangeFile}
-            // onSubmitImg={onSubmitImg}
-            // src={src}
-            // successMessage={successMessage}
+                open={open}
+                handleOpenClose={handleOpenClose}
+                title='update product'
+                productName={productName}
+                fileName={fileName}
+                onchangeInput={onChangeProductName}
+                // onClick={onClickUpdateCategory}
+                onChangeFile={onChangeFile}
+                // onSubmitImg={onSubmitImg}
+                src={src}
+                successMessage={successMessage}
             />
         </div>
     )
