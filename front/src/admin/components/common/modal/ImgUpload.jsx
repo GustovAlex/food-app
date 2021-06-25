@@ -10,7 +10,6 @@ export default function ImgUpload({
     successMessage,
 }) {
     const classes = useStyles()
-    console.log("fileName", fileName)
     return (
         <div>
             <Fragment>
@@ -18,7 +17,7 @@ export default function ImgUpload({
                     <div className={classes.imgUploadwrap}>
                         <img
                             className={classes.imgUploadImg}
-                            src={src ? src : `/categoriesImg/${fileName}`}
+                            src={src ? src : `/img/${fileName}`}
                             alt='img'
                         />
                     </div>

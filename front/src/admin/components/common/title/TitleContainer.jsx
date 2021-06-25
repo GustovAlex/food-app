@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Title from "./Title"
 import { addCategory, addCategoryImg } from "../../../redux/actions/category"
+import { addProduct } from "../../../redux/actions/product"
 import { useDispatch } from "react-redux"
 
 export default function TitleContainer({
@@ -8,10 +9,21 @@ export default function TitleContainer({
     buttonText,
     options,
     onClickSetCategoryId,
+    lable,
+    selectedCategoryId,
 }) {
     const dispatch = useDispatch()
     const [open, setOpen] = useState(false)
     const [categoryName, setCategoryName] = useState("")
+    const [productName, setProductName] = useState("")
+    const [productIngredients, setProductIngredients] = useState("")
+    const [productPrice, setProductPrice] = useState("")
+
+    console.log("productName", categoryName)
+    console.log("productName", productName)
+    console.log("productIngredients", productIngredients)
+    console.log("productPrice", productPrice)
+
     const [file, setFile] = useState("")
     const [fileName, setFileName] = useState("")
     const [src, setSrc] = useState("")
@@ -36,11 +48,27 @@ export default function TitleContainer({
     const handleOpenClose = () => setOpen(!open)
 
     const onClickAddCategory = () => {
-        dispatch(addCategory({ categoryName, fileName }))
+        // !!categoryName
+        // ? dispatch(addCategory({ categoryName, fileName }))
+        // :
+        dispatch(
+            addProduct({
+                productName,
+                productIngredients,
+                productPrice,
+                fileName,
+                selectedCategoryId,
+            })
+        )
+
         handleOpenClose()
     }
 
     const onChangeCategoryName = (e) => setCategoryName(e.target.value)
+    const onChangeProductName = (e) => setProductName(e.target.value)
+    const onChangeProductIngredients = (e) =>
+        setProductIngredients(e.target.value)
+    const onChangeProductPrice = (e) => setProductPrice(e.target.value)
 
     return (
         <Title
@@ -48,7 +76,10 @@ export default function TitleContainer({
             buttonText={buttonText}
             open={open}
             handleOpenClose={handleOpenClose}
-            onchangeInput={onChangeCategoryName}
+            onChangeCategoryName={onChangeCategoryName}
+            onChangeProductName={onChangeProductName}
+            onChangeProductIngredients={onChangeProductIngredients}
+            onChangeProductPrice={onChangeProductPrice}
             onClickAddCategory={onClickAddCategory}
             fileName={fileName}
             src={src}
@@ -57,6 +88,7 @@ export default function TitleContainer({
             successMessage={successMessage}
             options={options}
             onClickSetCategoryId={onClickSetCategoryId}
+            lable={lable}
         />
     )
 }

@@ -10,7 +10,10 @@ export default function TransitionsModal({
     open,
     handleOpenClose,
     title,
-    onchangeInput,
+    onChangeCategoryName,
+    onChangeProductName,
+    onChangeProductIngredients,
+    onChangeProductPrice,
     onClick,
     fileName,
     src,
@@ -18,6 +21,8 @@ export default function TransitionsModal({
     onSubmitImg,
     successMessage,
     categoryName,
+    productName,
+    lable,
 }) {
     const classes = useStyles()
 
@@ -44,14 +49,37 @@ export default function TransitionsModal({
                         />
                         <div className={classes.modalInput}>
                             <Input
-                                lable={
-                                    !!categoryName
-                                        ? categoryName
-                                        : "category name"
+                                lable={`${lable} name`}
+                                onChange={
+                                    lable === "category"
+                                        ? onChangeCategoryName
+                                        : onChangeProductName
                                 }
-                                onChange={onchangeInput}
-                                value={categoryName}
+                                value={categoryName || productName}
+                                defaultValue={categoryName || productName}
                             />
+                            {lable === "product" ? (
+                                <div>
+                                    <div className={classes.modalInput}>
+                                        <Input
+                                            lable={`${lable} ingredients`}
+                                            onChange={
+                                                onChangeProductIngredients
+                                            }
+                                            value={productName}
+                                            defaultValue={productName}
+                                        />
+                                    </div>
+                                    <div className={classes.modalInput}>
+                                        <Input
+                                            lable={`${lable} price`}
+                                            onChange={onChangeProductPrice}
+                                            value={productName}
+                                            defaultValue={productName}
+                                        />
+                                    </div>
+                                </div>
+                            ) : null}
                         </div>
                         <div className={classes.modalButton}>
                             <Button text={title} onClick={onClick} />

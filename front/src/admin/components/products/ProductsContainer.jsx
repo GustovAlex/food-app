@@ -21,6 +21,7 @@ export default function ProductsContainer() {
             categoriesList={categories}
             onClickSetCategoryId={onClickSetCategoryId}
             selectedCategory={selectedCategory}
+            selectedCategoryId={selectedCategoryId}
         />
     )
 }

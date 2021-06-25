@@ -10,6 +10,7 @@ export default function Categories({ categoriesList }) {
             <TitleContainer
                 titleText='List of Categories:'
                 buttonText='add category'
+                lable='category'
             />
             <div className={classes.categoriesContent}>
                 {categoriesList

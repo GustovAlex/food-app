@@ -6,7 +6,7 @@ export default function CategoryItem({ category }) {
             <div className='categoryItem-wrap'>
                 <img
                     className='categoryItem-wrap-img'
-                    src={`/categoriesImg/${category.img}`}
+                    src={`/img/${category.img}`}
                     alt='img'
                 />
                 <h3 className='categoryItem-wrap-title'>{category.name}</h3>

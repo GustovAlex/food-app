@@ -36,9 +36,11 @@ function* addCategoryImg({ payload }) {
 }
 
 function* deleteCategoryImg({ payload }) {
-    const { formData } = payload
+    console.log(payload)
+    const fileName = payload
+    console.log("fileName in saga", fileName)
     try {
-        yield fetchDeleteImg(formData)
+        yield fetchDeleteImg(fileName)
     } catch (e) {
         console.log(e)
     }

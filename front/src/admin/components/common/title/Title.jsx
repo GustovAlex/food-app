@@ -1,7 +1,7 @@
 import useStyles from "./titleStyles"
 import Button from "../button/Button"
 import Paper from "@material-ui/core/Paper"
-import CategoriesModal from "../modal/Modal"
+import Modal from "../modal/Modal"
 import Select from "../select/Select"
 
 export default function Title({
@@ -9,7 +9,12 @@ export default function Title({
     buttonText,
     open,
     handleOpenClose,
-    onchangeInput,
+
+    onChangeCategoryName,
+    onChangeProductName,
+    onChangeProductIngredients,
+    onChangeProductPrice,
+
     onClickAddCategory,
     fileName,
     src,
@@ -18,6 +23,7 @@ export default function Title({
     successMessage,
     options,
     onClickSetCategoryId,
+    lable,
 }) {
     const classes = useStyles()
 
@@ -35,17 +41,21 @@ export default function Title({
                 <Button text={buttonText} onClick={handleOpenClose} />
             </Paper>
 
-            <CategoriesModal
+            <Modal
                 open={open}
                 handleOpenClose={handleOpenClose}
-                title='add category'
-                onchangeInput={onchangeInput}
+                title={buttonText}
+                onChangeCategoryName={onChangeCategoryName}
+                onChangeProductName={onChangeProductName}
+                onChangeProductIngredients={onChangeProductIngredients}
+                onChangeProductPrice={onChangeProductPrice}
                 onClick={onClickAddCategory}
                 fileName={fileName}
                 src={src}
                 onChangeFile={onChangeFile}
                 onSubmitImg={onSubmitImg}
                 successMessage={successMessage}
+                lable={lable}
             />
         </div>
     )

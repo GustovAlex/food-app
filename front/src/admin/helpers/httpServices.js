@@ -52,11 +52,12 @@ export const fetchAddImg = async (formData) => {
     }
 }
 
-export const fetchDeleteImg = async (formData) => {
+export const fetchDeleteImg = async (fileName) => {
+    console.log("fileName in HTTP", fileName)
     try {
         const res = await axios.post(
             "http://localhost:5000/api/file/delete",
-            formData,
+            { fileName: fileName },
             {
                 headers: {
                     Authorization: localStorage.getItem("Authorization"),
@@ -99,5 +100,39 @@ export const fetchDeleteCategory = async (categoryId) => {
             headers: { Authorization: localStorage.getItem("Authorization") },
         }
     )
+    return response
+}
+
+/////////// product
+
+export const fetchAddProduct = async (
+    productName,
+    productIngredients,
+    productPrice,
+    fileName,
+    selectedCategoryId
+) => {
+    console.log(
+        "payload add product in HTTP",
+        productName,
+        productIngredients,
+        productPrice,
+        fileName,
+        selectedCategoryId
+    )
+    const response = await axios.post(
+        "http://localhost:5000/api/product",
+        {
+            name: productName,
+            ingredients: productIngredients,
+            price: productPrice,
+            img: fileName,
+            categoryId: selectedCategoryId,
+        },
+        {
+            headers: { Authorization: localStorage.getItem("Authorization") },
+        }
+    )
+    console.log("response", response)
     return response
 }

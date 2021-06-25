@@ -24,7 +24,7 @@ export default function ProductsItem({
                 {!!product.img ? (
                     <img
                         className={classes.productItemImg}
-                        src={`/productImg/${product.img}`}
+                        src={`/img/${product.img}`}
                         alt={product.name}
                     />
                 ) : (
@@ -75,6 +75,7 @@ export default function ProductsItem({
                 // onSubmitImg={onSubmitImg}
                 src={src}
                 successMessage={successMessage}
+                lable='product'
             />
         </div>
     )

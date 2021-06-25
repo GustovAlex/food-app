@@ -6,10 +6,9 @@ export default function Products({
     categoriesList,
     onClickSetCategoryId,
     selectedCategory,
+    selectedCategoryId,
 }) {
     const classes = useStyles()
-
-    // console.log("prod", selectedCategory.product.length)
 
     return (
         <div>
@@ -18,6 +17,8 @@ export default function Products({
                 buttonText='add product'
                 options={categoriesList}
                 onClickSetCategoryId={onClickSetCategoryId}
+                lable='product'
+                selectedCategoryId={selectedCategoryId}
             />
             <div className={classes.productsContent}>
                 {selectedCategory?.product.length !== 0 ? (

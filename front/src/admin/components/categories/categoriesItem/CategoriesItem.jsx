@@ -1,6 +1,6 @@
 import useStyles from "./categoriesItemStyles"
 import Button from "../../common/button/Button"
-import CategoriesModal from "../../common/modal/Modal"
+import Modal from "../../common/modal/Modal"
 import ConfirmModal from "../../common/confirmModal/ConfirmModal"
 
 export default function CategoriesItem({
@@ -28,7 +28,7 @@ export default function CategoriesItem({
                 {!!category.img ? (
                     <img
                         className={classes.categoriesItemImg}
-                        src={`/categoriesImg/${category.img}`}
+                        src={`/img/${category.img}`}
                         alt='burger'
                     />
                 ) : (
@@ -59,7 +59,7 @@ export default function CategoriesItem({
                 onClickDeleteCategory={onClickDeleteCategory}
                 titleName={`${targetCategoryName} category`}
             />
-            <CategoriesModal
+            <Modal
                 open={open}
                 handleOpenClose={handleOpenClose}
                 title='update category'
@@ -71,6 +71,7 @@ export default function CategoriesItem({
                 onSubmitImg={onSubmitImg}
                 src={src}
                 successMessage={successMessage}
+                lable='category'
             />
         </div>
     )

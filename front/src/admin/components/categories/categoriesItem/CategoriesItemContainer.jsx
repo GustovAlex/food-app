@@ -23,7 +23,7 @@ export default function CategoriesItemContainer({ category }) {
     const [src, setSrc] = useState("")
     const [successMessage, setSuccessMessage] = useState("")
 
-    console.log("fileName IU", fileName)
+    console.log("fileName", fileName)
     console.log("src IU", src)
 
     const onChangeFile = (e) => {
@@ -61,7 +61,8 @@ export default function CategoriesItemContainer({ category }) {
         // formData.append("file", file)
         // formData.append("fileName", fileName)
         // e.preventDefault()
-        // dispatch(deleteCategoryImg(fileName))
+        console.log("fileName", fileName)
+        dispatch(deleteCategoryImg(fileName))
     }
 
     return (
