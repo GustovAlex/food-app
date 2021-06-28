@@ -108,16 +108,10 @@ export const fetchAddProduct = async (
     productIngredients,
     productPrice,
     fileName,
-    selectedCategoryId
+    selectedCategoryId,
+    isNew,
+    isPromotion
 ) => {
-    console.log(
-        "payload add product in HTTP",
-        productName,
-        productIngredients,
-        productPrice,
-        fileName,
-        selectedCategoryId
-    )
     const response = await axios.post(
         "http://localhost:5000/api/product",
         {
@@ -126,6 +120,8 @@ export const fetchAddProduct = async (
             price: productPrice,
             img: fileName,
             categoryId: selectedCategoryId,
+            isNewProduct: isNew,
+            isPromotionProduct: isPromotion,
         },
         {
             headers: { Authorization: localStorage.getItem("Authorization") },
@@ -151,7 +147,9 @@ export const fetchUpdateProduct = async (
     productIngredients,
     productPrice,
     fileName,
-    categoryId
+    categoryId,
+    isNew,
+    isPromotion
 ) => {
     const response = await axios.put(
         `http://localhost:5000/api/product/${productId}`,
@@ -161,6 +159,8 @@ export const fetchUpdateProduct = async (
             price: productPrice,
             img: fileName,
             categoryId,
+            isNewProduct: isNew,
+            isPromotionProduct: isPromotion,
         },
         {
             headers: { Authorization: localStorage.getItem("Authorization") },

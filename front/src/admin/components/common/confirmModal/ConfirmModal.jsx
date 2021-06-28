@@ -13,8 +13,6 @@ export default function TransitionsModal({
 }) {
     const classes = useStyles()
 
-    console.log("titleName", titleName)
-
     return (
         <div>
             <Modal

@@ -2,6 +2,7 @@ import useStyles from "./productsItemStyles"
 import Modal from "../../common/modal/Modal"
 import ConfirmModal from "../../common/confirmModal/ConfirmModal"
 import Button from "../../common/button/Button"
+import ProductMarkers from "./ProductMarkers"
 
 export default function ProductsItem({
     product,
@@ -23,6 +24,10 @@ export default function ProductsItem({
     onClickDeleteProduct,
     onClickUpdateProduct,
     onSubmitImg,
+    isNew,
+    isPromotion,
+    handleChangeIsNew,
+    handleChangeIsPromotion,
 }) {
     const classes = useStyles()
     return (
@@ -53,6 +58,14 @@ export default function ProductsItem({
                 </div>
 
                 <div className={classes.productItemButtons}>
+                    <ProductMarkers
+                        title='new'
+                        productMarker={product?.isNewProduct}
+                    />
+                    <ProductMarkers
+                        title='promotion'
+                        productMarker={product?.isPromotionProduct}
+                    />
                     <div className={classes.productItemButtonsItem}>
                         <Button text='update' onClick={handleOpenClose} />
                     </div>
@@ -87,6 +100,10 @@ export default function ProductsItem({
                 src={src}
                 successMessage={successMessage}
                 lable='product'
+                isNew={isNew}
+                isPromotion={isPromotion}
+                handleChangeIsNew={handleChangeIsNew}
+                handleChangeIsPromotion={handleChangeIsPromotion}
             />
         </div>
     )

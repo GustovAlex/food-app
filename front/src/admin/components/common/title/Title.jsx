@@ -24,6 +24,10 @@ export default function Title({
     options,
     onClickSetCategoryId,
     lable,
+    isNew,
+    isPromotion,
+    handleChangeIsNew,
+    handleChangeIsPromotion,
 }) {
     const classes = useStyles()
 
@@ -56,6 +60,10 @@ export default function Title({
                 onSubmitImg={onSubmitImg}
                 successMessage={successMessage}
                 lable={lable}
+                isNew={isNew}
+                isPromotion={isPromotion}
+                handleChangeIsNew={handleChangeIsNew}
+                handleChangeIsPromotion={handleChangeIsPromotion}
             />
         </div>
     )

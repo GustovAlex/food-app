@@ -5,6 +5,7 @@ import useStyles from "./modalStyles"
 import Input from "../input/Input"
 import Button from "../button/Button"
 import ImgUpload from "./ImgUpload"
+import Switch from "../switch/Switch"
 
 export default function TransitionsModal({
     open,
@@ -25,6 +26,10 @@ export default function TransitionsModal({
     productIngredients,
     productPrice,
     lable,
+    isNew,
+    isPromotion,
+    handleChangeIsNew,
+    handleChangeIsPromotion,
 }) {
     const classes = useStyles()
 
@@ -78,6 +83,18 @@ export default function TransitionsModal({
                                             onChange={onChangeProductPrice}
                                             value={productPrice}
                                             defaultValue={productPrice}
+                                        />
+                                    </div>
+                                    <div className={classes.markers}>
+                                        <Switch
+                                            title='new'
+                                            isMarker={isNew}
+                                            onChange={handleChangeIsNew}
+                                        />
+                                        <Switch
+                                            title='Promotion'
+                                            isMarker={isPromotion}
+                                            onChange={handleChangeIsPromotion}
                                         />
                                     </div>
                                 </div>

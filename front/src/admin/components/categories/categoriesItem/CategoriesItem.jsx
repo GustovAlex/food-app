@@ -65,7 +65,7 @@ export default function CategoriesItem({
                 title='update category'
                 categoryName={categoryName}
                 fileName={fileName}
-                onchangeInput={onChangeCategoryName}
+                onChangeCategoryName={onChangeCategoryName}
                 onClick={onClickUpdateCategory}
                 onChangeFile={onChangeFile}
                 onSubmitImg={onSubmitImg}

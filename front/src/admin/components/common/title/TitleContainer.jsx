@@ -25,6 +25,8 @@ export default function TitleContainer({
     const [fileName, setFileName] = useState("")
     const [src, setSrc] = useState("")
     const [successMessage, setSuccessMessage] = useState("")
+    const [isNew, setIsNew] = useState(false)
+    const [isPromotion, setIsPromotion] = useState(false)
 
     const onChangeFile = (e) => {
         setFile(e.target.files[0])
@@ -54,6 +56,8 @@ export default function TitleContainer({
                       productPrice,
                       fileName,
                       selectedCategoryId,
+                      isNew,
+                      isPromotion,
                   })
               )
         handleOpenClose()
@@ -64,6 +68,12 @@ export default function TitleContainer({
     const onChangeProductIngredients = (e) =>
         setProductIngredients(e.target.value)
     const onChangeProductPrice = (e) => setProductPrice(e.target.value)
+    const handleChangeIsNew = (event) => {
+        setIsNew(event.target.checked)
+    }
+    const handleChangeIsPromotion = (event) => {
+        setIsPromotion(event.target.checked)
+    }
 
     return (
         <Title
@@ -84,6 +94,10 @@ export default function TitleContainer({
             options={options}
             onClickSetCategoryId={onClickSetCategoryId}
             lable={lable}
+            isNew={isNew}
+            isPromotion={isPromotion}
+            handleChangeIsNew={handleChangeIsNew}
+            handleChangeIsPromotion={handleChangeIsPromotion}
         />
     )
 }

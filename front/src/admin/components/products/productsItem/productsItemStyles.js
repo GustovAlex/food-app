@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: "2px solid #FF8302",
         padding: "10px 0",
         textTransform: "uppercase",
+        alignItems: "center",
     },
     productItemImg: {
         height: "50px",
@@ -32,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
         fontSize: "12px",
     },
     productPrice: {
-        // marginRight: "80px",
         color: "#FF8302",
         fontWeight: 600,
         fontSize: "18px",
@@ -43,6 +43,17 @@ const useStyles = makeStyles((theme) => ({
     },
     productItemButtonsItem: {
         marginLeft: "40px",
+    },
+    markers: {
+        margin: "0 15px",
+        display: "flex",
+        justifyContent: "end",
+    },
+    markerTrue: {
+        color: "green",
+    },
+    markerFalse: {
+        color: "red",
     },
 }))
 

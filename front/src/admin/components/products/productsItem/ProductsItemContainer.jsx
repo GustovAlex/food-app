@@ -25,10 +25,15 @@ export default function ProductsItemContainer({ product }) {
     const [productPrice, setProductPrice] = useState(
         !!product.price ? product.price : ""
     )
+    const [isNew, setIsNew] = useState(
+        product?.isNewProduct ? product?.isNewProduct : false
+    )
+    const [isPromotion, setIsPromotion] = useState(
+        product?.isPromotionProduct ? product?.isPromotionProduct : false
+    )
 
-    console.log("productName", productName)
-    console.log("productIngredients", productIngredients)
-    console.log("productPrice", productPrice)
+    console.log("isNew", isNew)
+    console.log("isPromotion", isPromotion)
 
     const [file, setFile] = useState("")
     const [fileName, setFileName] = useState(!!imgName ? imgName : "")
@@ -65,6 +70,8 @@ export default function ProductsItemContainer({ product }) {
                 productPrice,
                 fileName,
                 categoryId,
+                isNew,
+                isPromotion,
             })
         )
         handleOpenClose()
@@ -74,6 +81,12 @@ export default function ProductsItemContainer({ product }) {
     const onChangeProductIngredients = (e) =>
         setProductIngredients(e.target.value)
     const onChangeProductPrice = (e) => setProductPrice(e.target.value)
+    const handleChangeIsNew = (event) => {
+        setIsNew(event.target.checked)
+    }
+    const handleChangeIsPromotion = (event) => {
+        setIsPromotion(event.target.checked)
+    }
 
     const handleOpenCloseConfirmModal = () => {
         setOpenConfirmModal(!openConfirmModal)
@@ -105,6 +118,10 @@ export default function ProductsItemContainer({ product }) {
             onChangeFile={onChangeFile}
             onSubmitImg={onSubmitImg}
             successMessage={successMessage}
+            isNew={isNew}
+            isPromotion={isPromotion}
+            handleChangeIsNew={handleChangeIsNew}
+            handleChangeIsPromotion={handleChangeIsPromotion}
         />
     )
 }

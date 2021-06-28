@@ -23,9 +23,6 @@ export default function CategoriesItemContainer({ category }) {
     const [src, setSrc] = useState("")
     const [successMessage, setSuccessMessage] = useState("")
 
-    console.log("fileName", fileName)
-    console.log("src IU", src)
-
     const onChangeFile = (e) => {
         setFile(e.target.files[0])
         setFileName(e.target.files[0].name)
@@ -44,12 +41,12 @@ export default function CategoriesItemContainer({ category }) {
 
     const handleOpenClose = () => setOpen(!open)
 
+    const onChangeCategoryName = (e) => setCategoryName(e.target.value)
+
     const onClickUpdateCategory = () => {
         dispatch(updateCategory({ categoryId, categoryName, fileName }))
         handleOpenClose()
     }
-
-    const onChangeCategoryName = (e) => setCategoryName(e.target.value)
 
     const handleOpenCloseConfirmModal = () => {
         setOpenConfirmModal(!openConfirmModal)
