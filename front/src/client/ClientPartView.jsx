@@ -11,6 +11,7 @@ import Navbar from "./components/navBar/Navbar"
 import { useDispatch, useSelector } from "react-redux"
 import { getCategories } from "./redux/actions/index"
 import PropagateLoader from "react-spinners/PropagateLoader"
+import "./clientPart.scss"
 
 const ClientPartBasicStyles = styled.div`
     padding: 0;
@@ -48,7 +49,9 @@ export default function ClientPartView(props) {
                     </Router>
                 </ClientPartBasicStyles>
             ) : (
-                <PropagateLoader color={"#FF8302"} size={20} />
+                <div className='propagateLoader'>
+                    <PropagateLoader color={"#FF8302"} size={20} />
+                </div>
             )}
         </>
     )

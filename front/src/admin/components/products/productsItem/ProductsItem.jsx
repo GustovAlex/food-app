@@ -22,6 +22,7 @@ export default function ProductsItem({
     successMessage,
     onClickDeleteProduct,
     onClickUpdateProduct,
+    onSubmitImg,
 }) {
     const classes = useStyles()
     return (
@@ -82,7 +83,7 @@ export default function ProductsItem({
                 onChangeProductPrice={onChangeProductPrice}
                 onClick={onClickUpdateProduct}
                 onChangeFile={onChangeFile}
-                // onSubmitImg={onSubmitImg}
+                onSubmitImg={onSubmitImg}
                 src={src}
                 successMessage={successMessage}
                 lable='product'

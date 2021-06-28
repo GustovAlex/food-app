@@ -103,7 +103,7 @@ export default function ProductsItemContainer({ product }) {
             onClickUpdateProduct={onClickUpdateProduct}
             src={src}
             onChangeFile={onChangeFile}
-            // onSubmitImg={onSubmitImg}
+            onSubmitImg={onSubmitImg}
             successMessage={successMessage}
         />
     )

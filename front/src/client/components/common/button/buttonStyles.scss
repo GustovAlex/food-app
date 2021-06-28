@@ -1,0 +1,30 @@
+.button {
+    display: inline-block;
+    box-sizing: border-box;
+
+    &-navLink {
+        background-color: #ffa03e;
+        display: inline-block;
+        padding: 10px 0;
+        box-sizing: border-box;
+        margin: 0 15px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        width: 120px;
+        text-align: center;
+        cursor: pointer;
+        text-decoration: none;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #fff;
+
+        &.active {
+            background-color: #ff8302;
+            // padding-bottom: 15px;
+        }
+
+        &:hover {
+            background-color: #ff8302;
+        }
+    }
+}

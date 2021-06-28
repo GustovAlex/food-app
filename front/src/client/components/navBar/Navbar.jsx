@@ -3,6 +3,7 @@ import { clientRoutes } from "../../routes/index"
 import logo from "../../img/logo.svg"
 import cartIcon from "../../img/basket.png"
 import "./navbarStyles.scss"
+import Button from "../common/button/Button"
 
 export default function Navbar({ ordersCount }) {
     return (
@@ -11,7 +12,7 @@ export default function Navbar({ ordersCount }) {
                 <img className='navbar-content-logo' src={logo} alt='logo' />
                 <div className='navbar-content-links'>
                     {clientRoutes.map((el) => {
-                        return el.text ? (
+                        return el.isFromMenu ? (
                             <NavLink
                                 to={el.path}
                                 key={el.path}
@@ -34,6 +35,10 @@ export default function Navbar({ ordersCount }) {
                         {ordersCount ? ordersCount : 0}
                     </span>
                 </NavLink>
+                <div className='navbar-content-bottomButtom'>
+                    <Button buttonText='promotion' path='/client/promotion' />
+                    <Button buttonText='new' path='/client/new' />
+                </div>
             </div>
         </div>
     )
