@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom"
-import { clientRoutes } from "../../routes/index"
-import logo from "../../img/logo.svg"
-import cartIcon from "../../img/basket.png"
+import { clientRoutes } from "../../../routes/index"
+import logo from "../../../img/logo.svg"
+import cartIcon from "../../../img/basket.png"
 import "./navbarStyles.scss"
-import Button from "../common/button/Button"
+import Button from "../../common/button/Button"
 
 export default function Navbar({ ordersCount }) {
     return (

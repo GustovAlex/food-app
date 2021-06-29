@@ -7,7 +7,8 @@ import {
 } from "react-router-dom"
 import styled from "styled-components"
 import { clientRoutes } from "./routes/index"
-import Navbar from "./components/navBar/Navbar"
+// import Navbar from "./components/layout/navbar/Navbar"
+import Layout from "./components/layout/Layout"
 import { useDispatch, useSelector } from "react-redux"
 import { getCategories } from "./redux/actions/index"
 import PropagateLoader from "react-spinners/PropagateLoader"
@@ -33,19 +34,20 @@ export default function ClientPartView(props) {
             {!loading ? (
                 <ClientPartBasicStyles>
                     <Router>
-                        <Navbar />
-                        <Switch>
-                            {clientRoutes.map((el) => {
-                                return (
-                                    <Route
-                                        key={el.text}
-                                        path={el.path}
-                                        component={el.component}
-                                    />
-                                )
-                            })}
-                            <Redirect to='/client/main' />
-                        </Switch>
+                        <Layout>
+                            <Switch>
+                                {clientRoutes.map((el) => {
+                                    return (
+                                        <Route
+                                            key={el.text}
+                                            path={el.path}
+                                            component={el.component}
+                                        />
+                                    )
+                                })}
+                                <Redirect to='/client/main' />
+                            </Switch>
+                        </Layout>
                     </Router>
                 </ClientPartBasicStyles>
             ) : (

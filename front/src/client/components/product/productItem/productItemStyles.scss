@@ -1,0 +1,91 @@
+.productItem {
+    width: calc((100% - 60px) / 3);
+    box-sizing: border-box;
+    margin: 0 10px 20px 10px;
+    box-shadow: 0 4px 4px -2px rgb(158, 158, 158);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 100%;
+    padding: 15px 10px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        transform: scale(1.03);
+        box-shadow: 0 5px 5px -1px rgb(158, 158, 158);
+    }
+
+    &-container {
+        box-sizing: border-box;
+        display: flex;
+        align-items: flex-start;
+        height: 220px;
+        align-items: center;
+        color: #184653;
+        transition: all 0.2s ease-in-out;
+        cursor: default;
+        &:hover {
+            color: #ff8302;
+        }
+
+        &-imgWrap {
+            border-radius: 50%;
+            border: 3px solid #ff8302;
+            padding: 16px;
+            box-sizing: border-box;
+
+            &-img {
+                height: 80px;
+                width: 80px;
+                box-sizing: border-box;
+            }
+
+            &-noImg {
+                height: 80px;
+                width: 80px;
+                text-align: center;
+                padding-top: 30px;
+                box-sizing: border-box;
+            }
+        }
+
+        &-info {
+            margin: 0 auto;
+            width: 50%;
+            text-align: center;
+
+            &-title {
+                text-transform: uppercase;
+                padding-bottom: 10px;
+            }
+
+            &-ingredients {
+                color: #184653;
+                padding-bottom: 19px;
+                font-size: 16px;
+                height: 90px;
+            }
+
+            &-button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+                padding: 6px;
+                border-radius: 25px;
+                background-color: #ee1d1d;
+                color: #fff;
+                cursor: pointer;
+                &:hover {
+                    color: #fff;
+                }
+
+                p {
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    font-size: 14px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-sizing: border-box;
+    bottom: 0;
+    height: 100px;
+    background-color: #071415;
+
+    color: #fff;
+
+    &-wrap {
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+
+        &-item {
+            margin-top: 35px;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: 600;
+            cursor: pointer;
+
+            &-icon {
+                position: relative;
+                height: 10px;
+                width: 10px;
+            }
+            &-text,
+            &-link {
+                margin-left: 15px;
+            }
+
+            &-link {
+                text-decoration: none;
+                color: #fff;
+            }
+        }
+    }
+}
