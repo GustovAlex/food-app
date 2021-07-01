@@ -7,10 +7,9 @@ import {
 } from "react-router-dom"
 import styled from "styled-components"
 import { clientRoutes } from "./routes/index"
-// import Navbar from "./components/layout/navbar/Navbar"
 import Layout from "./components/layout/Layout"
 import { useDispatch, useSelector } from "react-redux"
-import { getCategories } from "./redux/actions/index"
+import { getCategories, addProductToOrder } from "./redux/actions/index"
 import PropagateLoader from "react-spinners/PropagateLoader"
 import "./clientPart.scss"
 
@@ -24,9 +23,25 @@ const ClientPartBasicStyles = styled.div`
 
 export default function ClientPartView(props) {
     const dispatch = useDispatch()
+    const { order } = useSelector((state) => state.order)
+    console.log("order len", order && !!order.length)
     useEffect(() => {
         dispatch(getCategories())
     }, [])
+    useEffect(() => {
+        !!order.length && localStorage.setItem("order", JSON.stringify(order))
+    }, [order])
+
+    // useEffect(() => {
+    //     const orderList = JSON.parse(localStorage.getItem("order"))
+    //     console.log("orderList", orderList[0])
+    //     if (orderList.length) {
+    //         console.log("orderList.length", orderList.length)
+    //         if (!order.length) {
+    //             dispatch(addProductToOrder(orderList))
+    //         }
+    //     }
+    // }, [])
     const { loading } = useSelector((state) => state.data)
 
     return (

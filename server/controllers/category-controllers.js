@@ -30,6 +30,7 @@ const getCategory = async (req, res) => {
             path: "product",
             model: "Product",
         })
+
         return res.json({ categoriesList })
     } catch (e) {
         console.log(e)

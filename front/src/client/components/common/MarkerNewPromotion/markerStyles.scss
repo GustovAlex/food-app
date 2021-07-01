@@ -1,0 +1,17 @@
+.marker {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    &-img {
+        height: 50px;
+        width: 50px;
+    }
+    &-text {
+        position: absolute;
+        top: 15px;
+        left: 10px;
+        transform: rotate(-15deg);
+        color: #fff;
+        font-weight: 600;
+    }
+}

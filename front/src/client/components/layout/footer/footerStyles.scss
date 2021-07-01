@@ -4,7 +4,7 @@
     bottom: 0;
     box-sizing: border-box;
     bottom: 0;
-    height: 100px;
+    height: 60px;
     background-color: #071415;
 
     color: #fff;
@@ -16,10 +16,10 @@
         margin: 0 auto;
 
         &-item {
-            margin-top: 35px;
+            margin-top: 20px;
             display: flex;
             align-items: center;
-            font-size: 18px;
+            font-size: 14px;
             text-transform: uppercase;
             font-weight: 600;
             cursor: pointer;

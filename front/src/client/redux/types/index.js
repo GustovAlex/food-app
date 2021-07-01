@@ -1,3 +1,4 @@
 export const SET_CLIENT_DATA = "SET_CLIENT_DATA"
 export const GET_DATA = "GET_DATA"
 export const TOGLE_LOADING = "TOGLE_LOADING"
+export const ADD_PRODUCT_TO_ORDER = "ADD_PRODUCT_TO_ORDER"

@@ -1,5 +1,5 @@
-import Promotion from "../components/promotion/Promotion"
+import PromotionListContainer from "../components/promotion/PromotionListContainer"
 
 export default function PromotionsPage() {
-    return <Promotion />
+    return <PromotionListContainer />
 }

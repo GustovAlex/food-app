@@ -1,12 +1,12 @@
-import "./buttonStyles.scss"
+import "./buttonLinkStyles.scss"
 import { NavLink } from "react-router-dom"
 
-export default function Button({ buttonText, path }) {
+export default function ButtonLink({ buttonText, path }) {
     return (
-        <div className='button'>
+        <div className='buttonLink'>
             <NavLink
                 to={path}
-                className='button-navLink'
+                className='buttonLink-navLink'
                 activeClassName='active'>
                 {buttonText}
             </NavLink>

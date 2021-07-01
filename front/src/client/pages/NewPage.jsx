@@ -1,5 +1,5 @@
-import New from "../components/new/New"
+import NewListContainer from "../components/new/NewListContainer"
 
 export default function NewPage() {
-    return <New />
+    return <NewListContainer />
 }

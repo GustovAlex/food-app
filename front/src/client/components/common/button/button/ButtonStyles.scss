@@ -1,0 +1,28 @@
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 6px;
+    border-radius: 25px;
+    background-color: #ee1d1d;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+        color: #fff;
+    }
+
+    &:active {
+        background-color: #e65151;
+        transform: scale(1.02);
+    }
+
+    p {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 14px;
+        margin-left: 10px;
+    }
+}

@@ -1,11 +1,22 @@
 import { NavLink } from "react-router-dom"
+import { useSelector } from "react-redux"
 import { clientRoutes } from "../../../routes/index"
 import logo from "../../../img/logo.svg"
 import cartIcon from "../../../img/basket.png"
 import "./navbarStyles.scss"
-import Button from "../../common/button/Button"
+import ButtonLink from "../../common/button/buttonLink/ButtonLink"
 
 export default function Navbar({ ordersCount }) {
+    const { productList } = useSelector((state) => state.data)
+    const NumberOfNewProducts = productList.filter(
+        (product) => product.isNewProduct == true
+    ).length
+
+    const NumberOfNPromotionProducts = productList.filter(
+        (product) => product.isPromotionProduct == true
+    ).length
+
+    console.log("lenght", NumberOfNewProducts)
     return (
         <div className='navbar'>
             <div className='navbar-content'>
@@ -36,8 +47,14 @@ export default function Navbar({ ordersCount }) {
                     </span>
                 </NavLink>
                 <div className='navbar-content-bottomButtom'>
-                    <Button buttonText='promotion' path='/client/promotion' />
-                    <Button buttonText='new' path='/client/new' />
+                    <ButtonLink
+                        buttonText={`promotion ${NumberOfNPromotionProducts}`}
+                        path='/client/promotion'
+                    />
+                    <ButtonLink
+                        buttonText={`new ${NumberOfNewProducts}`}
+                        path='/client/new'
+                    />
                 </div>
             </div>
         </div>
